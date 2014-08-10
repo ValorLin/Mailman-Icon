@@ -1,13 +1,15 @@
-@borderRadius: 4px;
-@borderWidth: 6px;
-@borderStyle: @borderWidth solid #000000;
+@baseSize: 1px;
 
-@truckWidth: 100px;
-@truckHeight: @truckWidth/10*7;
-@truckHeadHeight: @truckHeight/7*2.5;
-@truckBodyHeight: @truckHeight/7*4.5;
-@truckWheelWidth: @truckWidth/9;
-@truckWheelHeight: @truckWidth/9;
+@borderRadius: 4 * @baseSize;
+@strokeWidth: 3 * @baseSize;
+@strokeStyle: @strokeWidth solid #000000;
+
+@truckWidth: 100 * @baseSize;
+@truckHeight: 70 * @baseSize;
+@truckHeadHeight: 22 * @baseSize;
+@truckBodyHeight: 45 * @baseSize;
+@truckWheelWidth: 11 * @baseSize;
+@truckWheelHeight: 11 * @baseSize;
 
 @keyframes shake-big {
   0% {
@@ -65,55 +67,56 @@
   }
 }
 
-
 .mail {
-  width: 80px;
-  height: 50px;
+  width: 80 * @baseSize;
+  height: 50 * @baseSize;
   background-color: #ffffff;
-  border: @borderStyle;
+  border: @strokeStyle;
   border-radius: @borderRadius;
   position: absolute;
   top: 0px;
-  left: -@truckWidth/10;
+  left: -10 * @baseSize;
   animation: shake-big 1s infinite;
 
   &:before, &:after {
-    width: 50px;
-    border-top: @borderStyle;
+    width: 50 * @baseSize;
+    border-top: @strokeStyle;
     content: '';
     display: block;
   }
   &:before {
-    transform: rotate(30deg) translate(0, 10px);
+    transform: rotate(30deg) translate(0, 11*@baseSize);
   }
   &:after {
-    transform: rotate(-30deg) translate(29px, 20px);
+    transform: rotate(-30deg) translate(27*@baseSize, 23*@baseSize);
   }
 }
 
 .truck {
+  width: @truckWidth;
+  height: @truckHeight;
   position: relative;
   animation: shake-small 1s infinite;
   -webkit-animation-delay: 0.1s;
 
   .head, .body, .wheel, .window {
-    border: @borderStyle;
+    border: @strokeStyle;
     background-color: #ffffff;
   }
 
   .head {
     width: @truckWidth;
     border-top-right-radius: @truckHeadHeight;
-    height: @truckHeadHeight - @borderWidth;
+    height: @truckHeadHeight - @strokeWidth;
   }
 
   .window {
-    width: @truckWidth/10;
-    height: @truckHeadHeight - @borderWidth;
+    width: 10 * @baseSize;
+    height: @truckHeadHeight - @strokeWidth;
     position: absolute;
     border-bottom-left-radius: @borderRadius;
     border-right: none;
-    right: -6%;
+    right: -3 * @baseSize;
     top: @truckHeadHeight;
   }
 
@@ -130,7 +133,7 @@
     height: @truckWheelHeight;
     border-radius: 50%;
     position: absolute;
-    bottom: -@truckWheelHeight/5*4;
+    bottom: -@truckWheelHeight;
     animation: shake-big 1s infinite;
 
     &:nth-child(2n+1) {

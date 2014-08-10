@@ -107,7 +107,7 @@
   width: 80px;
   height: 50px;
   background-color: #ffffff;
-  border: 6px solid #000000;
+  border: 3px solid #000000;
   border-radius: 4px;
   position: absolute;
   top: 0px;
@@ -118,21 +118,23 @@
 .mail:before,
 .mail:after {
   width: 50px;
-  border-top: 6px solid #000000;
+  border-top: 3px solid #000000;
   content: '';
   display: block;
 }
 .mail:before {
-  -webkit-transform: rotate(30deg) translate(0, 10px);
-      -ms-transform: rotate(30deg) translate(0, 10px);
-          transform: rotate(30deg) translate(0, 10px);
+  -webkit-transform: rotate(30deg) translate(0, 11px);
+      -ms-transform: rotate(30deg) translate(0, 11px);
+          transform: rotate(30deg) translate(0, 11px);
 }
 .mail:after {
-  -webkit-transform: rotate(-30deg) translate(29px, 20px);
-      -ms-transform: rotate(-30deg) translate(29px, 20px);
-          transform: rotate(-30deg) translate(29px, 20px);
+  -webkit-transform: rotate(-30deg) translate(27px, 23px);
+      -ms-transform: rotate(-30deg) translate(27px, 23px);
+          transform: rotate(-30deg) translate(27px, 23px);
 }
 .truck {
+  width: 100px;
+  height: 70px;
   position: relative;
   -webkit-animation: shake-small 1s infinite;
           animation: shake-small 1s infinite;
@@ -142,12 +144,12 @@
 .truck .body,
 .truck .wheel,
 .truck .window {
-  border: 6px solid #000000;
+  border: 3px solid #000000;
   background-color: #ffffff;
 }
 .truck .head {
   width: 100px;
-  border-top-right-radius: 25px;
+  border-top-right-radius: 22px;
   height: 19px;
 }
 .truck .window {
@@ -156,8 +158,8 @@
   position: absolute;
   border-bottom-left-radius: 4px;
   border-right: none;
-  right: -6%;
-  top: 25px;
+  right: -3px;
+  top: 22px;
 }
 .truck .body {
   width: 100px;
@@ -167,11 +169,11 @@
   position: relative;
 }
 .truck .wheel {
-  width: 11.11111111px;
-  height: 11.11111111px;
+  width: 11px;
+  height: 11px;
   border-radius: 50%;
   position: absolute;
-  bottom: -8.88888889px;
+  bottom: -11px;
   -webkit-animation: shake-big 1s infinite;
           animation: shake-big 1s infinite;
 }
