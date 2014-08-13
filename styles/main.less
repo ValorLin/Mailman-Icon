@@ -1,7 +1,7 @@
 @baseSize: 1px;
 
 @borderRadius: 4 * @baseSize;
-@strokeWidth: 3 * @baseSize;
+@strokeWidth:6 * @baseSize;
 @strokeStyle: @strokeWidth solid #000000;
 
 @truckWidth: 100 * @baseSize;
@@ -116,7 +116,7 @@
     position: absolute;
     border-bottom-left-radius: @borderRadius;
     border-right: none;
-    right: -3 * @baseSize;
+    right: -@strokeWidth;
     top: @truckHeadHeight;
   }
 
@@ -133,7 +133,7 @@
     height: @truckWheelHeight;
     border-radius: 50%;
     position: absolute;
-    bottom: -@truckWheelHeight;
+    bottom: -@truckWheelHeight/2 - @strokeWidth*2;
     animation: shake-big 1s infinite;
 
     &:nth-child(2n+1) {
